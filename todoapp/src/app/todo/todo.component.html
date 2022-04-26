@@ -1,0 +1,9 @@
+<div  class="button-align" [ngClass]="{'tododone': todo.done, 'todofalse': !todo.done}">
+    <div>
+        <p>{{todo.todo}}</p>
+    </div>
+    <div>
+        <button mat-raised-button color="warn"(click)="deletetodo()">Delete Todo</button>
+    </div>
+</div>
+<p class="cursor-pointer" (click)="toggletodo()">{{ todo.todo }}</p>

@@ -1,0 +1,19 @@
+<div class=Layout>
+  <div>
+    <h1>Unsere Todos</h1>
+    <p>Offene Todos: {{countopentodos().length}}</p>
+    <div>
+      <input type="text" class="textdirection" (keyup)="settodo($event)">
+      <button mat-raised-button class="buttondirection" color="primary" (click)="addtodo()">Add Todo</button>
+    </div>
+  </div>
+</div>
+  <div *ngFor="let todo of todos; let i = index" class=Todo-bg>
+    <app-todo 
+    [todo]="todo" 
+    [index]="i" 
+    (todoindex)="toggletodo($event)"
+    (deleteindex)="deletetodo($event)"
+    ></app-todo>
+  </div>
+
